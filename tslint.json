@@ -1,0 +1,38 @@
+{
+    "rulesDirectory": ["tslint-plugin-prettier"],
+    "extends": ["tslint-config-prettier"],
+    "defaultSeverity": "error",
+    "rules": {
+        "no-var-keyword": true,
+        "class-name": true,
+        "linebreak-style": [true, "LF"],
+        "one-line": [true, "check-open-brace", "check-whitespace"],
+    
+        "prettier": [
+            true,
+            ".prettierrc"
+        ],
+
+        "no-use-before-declare": false,
+        "no-console": true,
+        "no-reference": true,
+        "no-internal-module": true,
+        "no-trailing-whitespace": true,
+        "no-arg": true,
+        "prefer-const": true,
+        "no-bitwise": false,
+        "no-conditional-assignment": true,
+        "no-construct": true,
+        "no-debugger": true,
+        "no-duplicate-variable": true,
+        "no-empty": false,
+        "no-eval": true,
+        "no-invalid-this": [true, "check-function-in-method"],
+        "no-string-literal": true,
+        "no-switch-case-fall-through": true,
+        "triple-equals": [true, "allow-undefined-check", "allow-null-check"],
+        "switch-default": false,
+        "use-isnan": true,
+        "trailing-comma": [false]
+    }
+}
