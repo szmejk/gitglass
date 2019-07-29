@@ -4,6 +4,8 @@ import { Dispatch } from 'redux'
 import { userSearchRequest } from '../store/actions/user'
 import { SearchBarContainer } from '../containers/SearchBarContainer'
 import { CardContainer } from '../containers/CardContainer'
+import { Container, Header } from './styles'
+
 type StateProps = {
   user: UserState
   repos: ReposState
@@ -25,11 +27,13 @@ const mapDispatchToProps: (dispatch: Dispatch) => DispatchProps = dispatch => ({
 })
 
 const Main: React.FC<StateProps & DispatchProps> = ({ user, repos, searchUser }) => (
-  <>
-    <h1> GitGlass </h1>
+  <Container>
+    <Header> 
+      <b>Git</b>Glass
+    </Header>
     <SearchBarContainer onSubmit={searchUser} />
     <CardContainer user={user} repos={repos} />
-  </>
+  </Container>
 )
 
 export const MainScreen = connect(

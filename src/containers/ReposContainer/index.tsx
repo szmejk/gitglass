@@ -1,5 +1,7 @@
 import * as React from 'react'
 import ReactLoading from 'react-loading'
+import { Container, Header, Centered } from './styles'
+import { Repo } from '../../components/Repo'
 
 interface Props {
   repos: ReposState
@@ -7,18 +9,20 @@ interface Props {
 
 export const ReposContainer: React.FC<Props> = ({ repos: { fetching, repos, reposError } }) =>
   fetching ? (
-    <ReactLoading type="bars" color="#000000" />
+    <Centered>
+      <ReactLoading type="bars" color="#000000" />
+    </Centered>
   ) : reposError ? (
-    <span>{reposError}</span>
+    <Centered>
+      <span>{reposError}</span>
+    </Centered>
   ) : (
     <>
-      {repos.map(({ name, url, starCount }) => (
-        <div>
-          <span>{starCount}</span>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {name}
-          </a>
-        </div>
-      ))}
+      <Header>Most popular repos:</Header>
+      <Container>
+        {repos.map(repo => (
+          <Repo repo={repo} />
+        ))}
+      </Container>
     </>
   )
