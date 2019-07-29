@@ -1,7 +1,7 @@
 interface User {
     name: string
     avatarUrl: string
-    bio: string
+    bio: string | null
 }
 
 interface UserState {
