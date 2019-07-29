@@ -34,7 +34,7 @@ export const Avatar = styled.img`
     height: 200px;
   }
   @media (max-width: 600px) {
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
 `
 
@@ -42,7 +42,8 @@ export const UserDataSection = styled.div`
   display: flex;
   @media (max-width: 600px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
   }
 `
 export const VerticalData = styled.div`
