@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import ReactLoading from 'react-loading'
+import { v4 as uuid } from 'uuid'
 import { Container, Header, Centered } from './styles'
 import { Repo } from '../../components/Repo'
 
@@ -25,7 +26,7 @@ export const ReposContainerComponent: React.FC<Props> = ({ repos: { fetching, re
       <Header>Most popular repos:</Header>
       <Container>
         {repos.map(repo => (
-          <Repo repo={repo} />
+          <Repo key={uuid()} repo={repo} />
         ))}
       </Container>
     </>
