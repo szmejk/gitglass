@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Provider } from 'react-redux'
-import { MainScreen } from './screens/Main'
+import { MainScreen } from './components/MainScreen'
 import { initStore } from './store/index'
 import { GlobalStyle } from './styles/global'
 const store = initStore()
