@@ -1,10 +1,8 @@
-import axios from 'axios'
+import { apiGet } from './utils'
 
 export const getRepos = async (username: string) => {
   try {
-    const response = await axios.get(
-      `https://api.github.com/search/repositories?q=user:${username}&sort=stars&order=desc`
-    )
+    const response = await apiGet(`https://api.github.com/search/repositories?q=user:${username}&sort=stars&order=desc`)
     if (response.status !== 200) {
       return null
     }

@@ -1,8 +1,8 @@
-import axios from 'axios'
+import { apiGet } from './utils'
 
 export const getUserData = async (username: string) => {
   try {
-    const response = await axios.get(`https://api.github.com/users/${username}`)
+    const response = await apiGet(`https://api.github.com/users/${username}`)
 
     if (response.status !== 200) {
       return null
